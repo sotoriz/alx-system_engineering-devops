@@ -1,7 +1,5 @@
 #  0x09. Web infrastructure design
 
-#  0x09. Web infrastructure design
-
 ## Concepts
 
  [DNS](https://alx-intranet.hbtn.io/concepts/12)
@@ -36,9 +34,9 @@
 
 ##  Tasks
 
-##  0. Simple web stack
+###  0. Simple web stack
 
-##  Description
+####  Description
 
 This is a simple web infrastructure that hosts a website that is reachable via `www.foobar.com`. There are no firewalls or SSL certificates for protecting the server's network. Each component (database, application server) has to share the resources (CPU, RAM, and SSD) provided by the server.
 
@@ -59,7 +57,7 @@ This is a simple web infrastructure that hosts a website that is reachable via `
 
 + What the server uses to communicate with the client (computer of the user requesting the website).<br/>Communication between the client and the server occurs over the internet network through the TCP/IP protocol suite.
 
-## Issues With This Infrastructure
+#### Issues With This Infrastructure
 
 + There are multiple SPOF (Single Point Of Failure) in this infrastructure.<br/>For example, if the MySQL database server is down, the entire site would be down.
 
@@ -67,8 +65,9 @@ This is a simple web infrastructure that hosts a website that is reachable via `
 
 + Cannot scale if there's too much incoming traffic.<br/>It would be hard to scale this infrastructure becauses one server contains the required components. The server can quickly run out of resources or slow down when it starts receiving a lot of requests.
 
-# 1: Distributed Web Infrastructure
-## Description
+### 1: Distributed Web Infrastructure
+
+#### Description
 
 This is a distributed web infrastructure that atttempts to reduce the traffic to the primary server by distributing some of the load to a replica server with the aid of a server responsible for balancing the load between the two servers (primary and replica).
 
@@ -79,7 +78,7 @@ This is a distributed web infrastructure that atttempts to reduce the traffic to
 + How a database *Primary-Replica* (*Master-Slave*) cluster works.<br/>A *Primary-Replica* setup configures one server to act as the *Primary* server and the other server to act as a *Replica* of the *Primary* server. However, the *Primary* server is capable of performing read/write requests whilst the *Replica* server is only capable of performing read requests. Data is synchronized between the *Primary* and *Replica* servers whenever the *Primary* server executes a write operation.
 + The difference between the *Primary* node and the *Replica* node in regard to the application.<br/>The *Primary* node is responsible for all the write operations the site needs whilst the *Replica* node is capable of processing read operations, which decreases the read traffic to the *Primary* node.
 
-## Issues With This Infrastructure
+#### Issues With This Infrastructure
 
 + There are multiple SPOF (Single Point Of Failure).<br/>For example, if the Primary MySQL database server is down, the entire site would be unable to make changes to the site (including adding or removing users). The server containing the load balancer and the application server connecting to the primary database server are also SPOFs.
 + Security issues.<br/>The data transmitted over the network isn't encrypted using an SSL certificate so hackers can spy on the network. There is no way of blocking unauthorized IPs since there's no firewall installed on any server.
