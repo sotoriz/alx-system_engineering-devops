@@ -44,21 +44,21 @@ Specifics About This Infrastructure
 
 + What a server is.<br/>A server is a computer hardware or software which is located at a data center that runs an OS and  provides services to other computers, which are usually referred to as *clients*.
 
-+ The role of the domain name.<br/>To provide a human-friendly alias for an IP Address. For example, the domain name `www.wikipedia.org` is easier to recognize and remember than `91.198.174.192`. The IP address and domain name alias is mapped in the Domain Name System (DNS)
++ The role of the domain name.<br/>To provide a human-friendly alias for an IP Address. For example, the domain name `www.foobar.com` is easier to recognize and remember than `8.8.8.8`. 
 
 + The type of DNS record `www` is in `www.foobar.com`.<br/>`www.foobar.com` uses an **A record** because it resolves to an IP address. This can be checked by running `dig www.foobar.com`.<br/>The "A" in A record stands for "address." An A record shows the IP address for a specific hostname or domain
 
-+ The role of the web server.<br/>The role of the web server is to serve web pages(static contents)The web server is a software/hardware that accepts requests via HTTP or HTTPS and responds with the content of the requested resource or an error messsage.
++ The role of the web server.<br/>The role of the web server is to serve web pages(static contents).The web server is a software/hardware that accepts requests via HTTP or HTTPS and responds with the content of the requested resource or an error messsage.
 
 + The role of the application server.<br/>The role of application server is to compute dynamic contents
 
 + The role of the database.<br/>Database in the infrastructure is to store application data. To maintain a collection of organized information that can easily be accessed, managed and updated
 
-+ What the server uses to communicate with the client (computer of the user requesting the website).<br/>The server is Communicating over the  network through the (TCP/IP).
++ What the server uses to communicate with the client (computer of the user requesting the website).<br/>The server is Communicating over the network(TCP/IP).
 
 Issues With This Infrastructure
 
-+ There are multiple SPOF (Single Point Of Failure) in this infrastructure.The server is singl point failure because nothing is reduntant( no backup in the event the other component fails).
++ There are multiple SPOF (Single Point Of Failure) in this infrastructure.<br/>The server is singl point failure because nothing is reduntant( no backup in the event the other component fails).
 
 + Downtime when maintenance needed.<br/>website will be temporarily down when new code is deployed and the web server needs to be restarted.
 
