@@ -124,6 +124,6 @@ This web infrastructure is a scaled up version of the infrastructure described S
 
 ###  Author
 
-Esther Ekanem <
+Uduakabasi (Esther) Ekanem < estekanem1@gmail.com >
 
 Sotonye Orifama < sotorisfx@gmail.com >
