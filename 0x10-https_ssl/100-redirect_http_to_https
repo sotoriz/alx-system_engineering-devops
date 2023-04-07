@@ -40,7 +40,7 @@ frontend  web-frontend-http
         default_backend web-backend
 
 frontend web-frontend-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.sotoris.tech
+	bind *:443 ssl crt /etc/haproxy/certs/www.sotoris.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	http-request redirect scheme https code 301 unless { ssl_fc }
 	default_backend web-backend
