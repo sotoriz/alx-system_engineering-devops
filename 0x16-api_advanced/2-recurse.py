@@ -13,7 +13,7 @@ BASE_URL = 'http://reddit.com/r/{}/hot.json'
 
 def recurse(subreddit, hot_list=[], after=None):
     ''' function recurse :Get ALL hot posts'''
-    headers = {'User-agent': 'lowercase-life'}
+    headers = {'User-agent': 'sotoriz'}
     params = {'limit': 100}
     if isinstance(after, str):
         if after != "STOP":
