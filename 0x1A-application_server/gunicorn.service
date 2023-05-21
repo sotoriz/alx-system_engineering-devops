@@ -1,12 +1,17 @@
-description "Gunicorn application server running AirBnB_clone_v4"
-author "Sotonye Orifama"
+# description "Gunicorn application server running AirBnB_clone_v4"
 
-start on runlevel [2345]
-stop on runlevel [!2345]
+[Unit]
+Description=gunicorn daemon
+After=network.target
+After=syslog.target
 
-respawn
-setuid ubuntu
-setgid www-data
+[Service]
+User=nginx
+Group=nginx
+EnvironmentFile=/etc/systemd/system/gunicorn.service
+WorkingDirectory=systemd.service
+/ExecStart=/systemd.service/bin/gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app >> --access-logfile /systemd.service/tmp/airbnb-access.log --error-logfile /systemd.service/tmp/airbnb-error.log
+Restart=on-failure
 
-chdir /home/ubuntu/AirBnB_clone_v4
-exec gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app >> /tmp/airbnb-access.log 2> /tmp/airbnb-error.logirbnb-access.log
+[Install]
+WantedBy=multi-user.target
